@@ -1,7 +1,7 @@
 # Curso Banco de Dados Boladão - DevDojo Academy
 Pra galera que curte o SQL Server e quer fazer uns scripts bolados, esse curto é pra você!
 
-FAQ
+FAQ <br>
 Q. Quem criou?<br>
 
 A. O cara que tem umas tarrachas soltas no cérebro que colocou um curso desses gratuito foi esse aqui: https://www.linkedin.com/in/fabricio-chousa-08358b125/<br>

@@ -9,7 +9,7 @@ A. O cara que tem umas tarrachas soltas no cérebro que colocou um curso desses 
 
 Q. Quem editou os vídeos?<br>
 
-A. Um, que também tem um parafuso a menos, já que editou de graça: https://www.linkedin.com/in/wildneisuane/ <br>
+A. Um cara deveras bom, que também tem um parafuso a menos, já que editou de graça: https://www.linkedin.com/in/wildneisuane/ <br>
 
 
 Q. Aonde eu posso assistir?<br>

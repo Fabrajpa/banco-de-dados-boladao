@@ -2,24 +2,24 @@
 Pra galera que curte o SQL Server e quer fazer uns scripts bolados, esse curto é pra você!
 
 FAQ
-Q. Quem criou?
+Q. Quem criou?<br>
 
-A. O cara que tem umas tarrachas soltas no cérebro que colocou um curso desses gratuito foi esse aqui: https://www.linkedin.com/in/fabricio-chousa-08358b125/
-
-
-Q. Quem editou os vídeos?
-
-A. Um, que também tem um parafuso a menos, já que editou de graça: https://www.linkedin.com/in/wildneisuane/
+A. O cara que tem umas tarrachas soltas no cérebro que colocou um curso desses gratuito foi esse aqui: https://www.linkedin.com/in/fabricio-chousa-08358b125/<br>
 
 
-Q. Aonde eu posso assistir?
+Q. Quem editou os vídeos?<br>
 
-A. Em breve vamos colocar a PlayList toda aqui
+A. Um, que também tem um parafuso a menos, já que editou de graça: https://www.linkedin.com/in/wildneisuane/ <br>
 
 
-Q. Quais assuntos vocês falam no curso?
+Q. Aonde eu posso assistir?<br>
 
-A. Estamos publicando aos poucos, até agora tá assim:
+A. Em breve vamos colocar a PlayList toda aqui<br>
+
+
+Q. Quais assuntos vocês falam no curso?<br>
+
+A. Estamos publicando aos poucos, até agora tá assim:<br>
   01 - Introdução
   02 - O que é banco de dados
   03 - Instalação SQL Server Windows(SSMS+Azure)

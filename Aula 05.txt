@@ -1,0 +1,31 @@
+Banco de Dados Boladão - DevDojo Academy
+Aula 05 - Instalação do SQL Server no Ubuntu
+
+Usamos bastante o terminal, mas vou deixar aqui os comandos para você poder seguir.
+Se você não tiver o curl instalado sugiro que o instale:
+
+sudo apt update -y && sudo apt -y install curl
+
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+Para o Ubuntu 18.04
+sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+
+Para o Ubuntu 20.04
+sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
+
+Agora vamos instalar o SQL Server
+sudo apt update -y && sudo apt install -y mssql-server
+
+Vamos rodar um comando para configurar o SQL Server
+sudo /opt/mssql/bin/mssql-conf setup
+
+Vamos escolher a Edição Developer (opção 2). Depois o idioma, eu optei pelo Português, mas se quiser colocar o Inglês é muito tranquilo e bom que você já vai praticando.
+Vamos escolher uma senha para o usuário administrador (sa) do nosso banco, é legal colocar letras maiúsculas, minúsculas, algum tipo de símbolo e número também (no mínimo 8 caracteres), por mais que seja uma instalação local tenham em mente que em seu trabalho (se você tiver acesso) esses tipos de senha deverão ser bem "fortes", depois é só confirmar a senha e aguardar um pouco.
+
+Após concluído vamos rodar "systemctl status mssql-server --no-pager" para verificar (não precisa usar as áspas "")
+
+
+Usamos o Stacer para fazer alguns gerencimantos do computador e verificar de maneira gráfica a execução do serviço do SQL Server
+sudo apt -y install stacer
+

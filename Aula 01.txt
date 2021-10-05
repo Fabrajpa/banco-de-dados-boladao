@@ -1,0 +1,4 @@
+Banco de Dados Boladão - DevDojo Academy
+Aula 01 - Introdução
+
+Bibliografia: Sistemas de banco de dados - Elmasri Navathe

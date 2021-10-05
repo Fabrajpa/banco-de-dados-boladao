@@ -6,13 +6,15 @@ Se você não tiver o curl instalado sugiro que o instale:
 
 sudo apt update -y && sudo apt -y install curl
 
+Importe as chaves GPG do repositório público:
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
-Para o Ubuntu 18.04
-sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+Registre o repositório do Ubuntu do Microsoft SQL Server para o SQL Server 2019:
+	Para o Ubuntu 18.04
+	sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
 
-Para o Ubuntu 20.04
-sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
+	Para o Ubuntu 20.04
+	sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
 
 Agora vamos instalar o SQL Server
 sudo apt update -y && sudo apt install -y mssql-server

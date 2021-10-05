@@ -31,3 +31,4 @@ Após concluído vamos rodar "systemctl status mssql-server --no-pager" para ver
 Usamos o Stacer para fazer alguns gerencimantos do computador e verificar de maneira gráfica a execução do serviço do SQL Server
 sudo apt -y install stacer
 
+SQL Server instalado

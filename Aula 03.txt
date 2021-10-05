@@ -1,0 +1,13 @@
+Banco de Dados Boladão - DevDojo Academy
+Aula 03 - Instalação do SQL Server (SSMS+Azure Data Studio)
+
+Link para download do SQL Server 2019 Developer Edition: https://go.microsoft.com/fwlink/?linkid=866662
+
+Links para o SQL Server Managemente Studio (SSMS)
+Inglês: https://aka.ms/ssmsfullsetup
+Português: https://go.microsoft.com/fwlink/?linkid=2168063&clcid=0x416
+
+Link para download do Azure Data Studio: https://go.microsoft.com/fwlink/?linkid=2170400
+
+Link para download da base AdventureWorks2019:
+https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak

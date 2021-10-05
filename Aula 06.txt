@@ -1,0 +1,6 @@
+Banco de Dados Boladão - DevDojo Academy
+Aula 06 - Instalação Azure Data Studio no Ubuntu e AdventureWorks2019
+
+Link para download Azure Data Studio: https://go.microsoft.com/fwlink/?linkid=2169956
+
+Link para download da AdventureWorks2019: https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak

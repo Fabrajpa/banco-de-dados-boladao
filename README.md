@@ -73,8 +73,46 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     46 - Criando um database - CREATE (ALTER) DATABASE (Collation)<br>
     47 - Criando uma tabela (CREATE TABLE, DROP IF EXISTS )<br>
     48 - Inserindo dados, atualizando dados (INSERT INTO, UPDATE WHERE<br>
-    49 - Criando uma tabela a partir de outra, usando outra database (SELECT INTO)<br>
-    50 - Falando um pouco de Modelagem de Dados - Parte 1<br><br>
+    49 - Aula 049 - Alterando uma tabela(ALTER TABLE, ADD COLUMN, ALTER COLUMN, DELETE, DROP, TRUNCATE)
+    50 - Criando uma tabela a partir de outra, usando outra database (SELECT INTO)<br>
+    51 - Falando um pouco de Modelagem de Dados<br>
+    52 - Criando uma Entidade e atributos - parte 1<br>
+    53 - Criando uma Entidade e atributos - parte 2<br>
+    54 - Criando uma Entidade e atributos multivalorados e derivados - parte 3<br>
+    55 - Criando uma Entidade fraca e chave parical - parte 4<br>
+    56 - Cardinalidade<br>
+    57 - Modelo Lógico - parte 1<br>
+    58 - Modelo Lógico - parte 2<br>
+    59 - Modelo Lógico - parte 3<br>
+    60 - Normalização - Introdução<br>
+    61 - Normalização - Primeira Forma Normal (1FN)<br>
+    62 - Normalização - Segunda Forma Normal (2FN)<br>
+    63 - Normalização - Terceira Forma Normal (3FN)<br>
+    64 - CONSTRAINTS - Parte 1<br>
+    65 - CONSTRAINTS - Parte 2<br>
+    66 - CONSTRAINTS - Parte 3<br>
+    67 - CONSTRAINTS - Parte 4<br>
+    68 - CONSTRAINTS - Parte 5<br>
+    69 - Modelo Físico - parte 1<br>
+    70 - Modelo Físico - parte 2<br>
+    71 - Modelo Físico - parte 3<br>
+    72 - Modelo Físico - parte 4<br>
+    73 - Modelo Físico - parte 5<br>
+    74 - Modelo Físico - parte 6<br>
+    75 - Modelo Físico - parte 7<br>
+    76 - Modelo Físico - parte 8<br>
+    77 - Modelo Físico - parte 9<br>
+    78 - Modelo Físico - parte 10<br>
+    79 - Modelo Físico - parte 11<br>
+    80 - UPDATE e DELETE com JOIN<br>
+    81 - Transformar Linhas em colunas - PIVOT<br>
+    82 - Transformar colunas em linhas - UNPIVOT<br>
+    83 - Valor máximo de várias colunas - VALUES (construtor de tabela)<br>
+    84 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 1<br>
+    85 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 2<br>
+    86 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 3<br>
+    
+    <br>
 
 
     Vamos colocar muito mais :D

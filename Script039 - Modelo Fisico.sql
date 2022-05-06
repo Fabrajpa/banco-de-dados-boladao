@@ -1,0 +1,390 @@
+
+    USE DEVDOJO
+    GO
+
+    /*
+        LOJAS FISICAS
+        FUNCIONARIO -> DEPARTAMENTO -> DIRETORIA
+            ENDERECO
+            TBL_PESSOA
+        CLIENTE
+    */
+
+    
+    DROP TABLE IF EXISTS TBL_PESSOA
+    GO
+    CREATE TABLE TBL_PESSOA (
+        ID_PESSOA INT PRIMARY KEY IDENTITY(1, 1),
+        NOME VARCHAR(100) NOT NULL, --NOME COMPLETO
+        CPF VARCHAR(11) NOT NULL UNIQUE ,
+        DT_NASCIMENTO DATE NOT NULL,
+        SEXO CHAR(1) NOT NULL,
+        EMAIL VARCHAR(50) NOT NULL CHECK (EMAIL <> ''),
+
+        CONSTRAINT ChQtdCpf CHECK ( LEN(CPF) = 11 ),
+        CONSTRAINT ChSexo CHECK ( UPPER(SEXO) = 'M' OR UPPER(SEXO) = 'F') 
+
+    )
+    GO
+    
+
+    DROP TABLE IF EXISTS TBL_TIPO_LOGRADOURO
+    GO
+    CREATE TABLE TBL_TIPO_LOGRADOURO (
+        ID_TP_LOGRADOURO  TINYINT PRIMARY KEY IDENTITY(1,1),
+        [DESC_LOGRADOURO] VARCHAR(40) NOT NULL UNIQUE CHECK ([DESC_LOGRADOURO] <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_ENDERECO
+    GO
+    CREATE TABLE TBL_ENDERECO (
+        ID_ENDERECO INT PRIMARY KEY IDENTITY(1,1),
+        ID_PESSOA INT NOT NULL,
+        ID_TP_LOGRADOURO TINYINT NOT NULL,
+        ENDERECO VARCHAR(80) NOT NULL CHECK (ENDERECO <> ''),
+        NUMERO INT NOT NULL,
+        COMPLEMENTO VARCHAR(40),
+        CEP VARCHAR(8) NOT NULL,
+
+        CONSTRAINT ChCep CHECK (CEP <> ''),
+
+        CONSTRAINT FkIdLogradouro FOREIGN KEY (ID_TP_LOGRADOURO)
+        REFERENCES TBL_TIPO_LOGRADOURO (ID_TP_LOGRADOURO),
+
+        CONSTRAINT FkIdPessoa FOREIGN KEY (ID_PESSOA)
+        REFERENCES TBL_PESSOA (ID_PESSOA)
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_TIPO_TELEFONE
+    GO
+    CREATE TABLE TBL_TIPO_TELEFONE (
+        ID_TP_TELEFONE TINYINT PRIMARY KEY IDENTITY(1,1),
+        TIPO_TELEFONE VARCHAR(15) NOT NULL UNIQUE CHECK (TIPO_TELEFONE <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_TELEFONE
+    GO
+    CREATE TABLE TBL_TELEFONE (
+        ID_TELEFONE INT PRIMARY KEY IDENTITY(1,1),
+        ID_PESSOA INT NOT NULL,
+        ID_TP_TELEFONE TINYINT NOT NULL,
+        DDD    VARCHAR(2) NOT NULL,
+        NUMERO VARCHAR(9) NOT NULL,
+
+        CONSTRAINT ChIdPessoaTelefone CHECK (ID_PESSOA <> ''),
+        CONSTRAINT ChDDD CHECK (DDD <> ''),
+        CONSTRAINT ChNumero CHECK (NUMERO <> ''),
+        CONSTRAINT FkIdPessoaTel FOREIGN KEY (ID_PESSOA) REFERENCES TBL_PESSOA (ID_PESSOA),
+        CONSTRAINT FkTpTelefone FOREIGN KEY (ID_TP_TELEFONE) REFERENCES TBL_TIPO_TELEFONE (ID_TP_TELEFONE)
+
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_DIRETORIA
+    GO
+    CREATE TABLE TBL_DIRETORIA (
+        ID_DIRETORIA TINYINT PRIMARY KEY IDENTITY(1, 1),
+        COD_DIR      VARCHAR(5) UNIQUE,
+        DIRETORIA    VARCHAR(30) UNIQUE,
+
+        CONSTRAINT ChCodDir  CHECK (COD_DIR <> ''),
+        CONSTRAINT ChDescDir CHECK (DIRETORIA <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_DEPARTAMENTO
+    GO
+    CREATE TABLE TBL_DEPARTAMENTO (
+        ID_DEPARTAMENTO TINYINT PRIMARY KEY IDENTITY(1, 1),
+        COD_DEPARTAMENTO VARCHAR(5) NOT NULL,
+        DEPARTAMENTO VARCHAR(30) NOT NULL UNIQUE CHECK(DEPARTAMENTO <> ''),
+        COD_DIR VARCHAR(5) CHECK (COD_DIR <> ''),
+
+        CONSTRAINT UqCodDepartamento UNIQUE (COD_DEPARTAMENTO),
+        CONSTRAINT ChCodDep CHECK (COD_DEPARTAMENTO <> ''),
+        
+        CONSTRAINT FkCodDir FOREIGN KEY (COD_DIR) REFERENCES TBL_DIRETORIA (COD_DIR)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_CARGO
+    GO
+    CREATE TABLE TBL_CARGO (
+        ID_CARGO SMALLINT PRIMARY KEY IDENTITY(1, 1),
+        CARGO VARCHAR(40) NOT NULL,
+
+        CONSTRAINT UqCargo UNIQUE (CARGO),
+        CONSTRAINT ChCargo CHECK (CARGO <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_TP_FUNCIONARIO
+    GO
+    CREATE TABLE TBL_TP_FUNCIONARIO (
+        ID_NIVEL_FUNCIONARIO TINYINT PRIMARY KEY IDENTITY(1,1),
+        TP_FUNCIONARIO VARCHAR(20) NOT NULL,
+        
+        CONSTRAINT UqTpNivel UNIQUE (TP_FUNCIONARIO),
+        CONSTRAINT ChTpNivel CHECK  (TP_FUNCIONARIO <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_FUNCIONARIO
+    GO
+    CREATE TABLE TBL_FUNCIONARIO (
+        MATRICULA   INT PRIMARY KEY IDENTITY(1000, 1),
+        ID_PESSOA   INT NOT NULL,
+        DT_ADMISSAO DATE NOT NULL,
+        DT_DEMISSAO DATE NULL,
+        SALARIO     FLOAT NOT NULL CHECK (SALARIO > 700),
+        
+        ID_CARGO SMALLINT NOT NULL,
+        ID_DEPARTAMENTO TINYINT NOT NULL,
+        ID_NIVEL_FUNCIONARIO TINYINT NOT NULL,
+
+        CONSTRAINT FkIdPessoaFunc FOREIGN KEY (ID_PESSOA) REFERENCES TBL_PESSOA(ID_PESSOA),
+        CONSTRAINT FkIdCargo FOREIGN KEY (ID_CARGO) REFERENCES TBL_CARGO (ID_CARGO),
+        CONSTRAINT FkIdDepartamento FOREIGN KEY (ID_DEPARTAMENTO) REFERENCES TBL_DEPARTAMENTO (ID_DEPARTAMENTO)
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_PRODUTO
+    GO
+    CREATE TABLE TBL_PRODUTO (
+        ID_PRODUTO INT PRIMARY KEY IDENTITY(10000, 1),
+        NOME_PROD VARCHAR(100) NOT NULL UNIQUE CHECK(NOME_PROD <> ''),
+        PRECO FLOAT NOT NULL CHECK (PRECO >= 50)
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_CLIENTE
+    GO
+    CREATE TABLE TBL_CLIENTE (
+        ID_CLIENTE INT PRIMARY KEY IDENTITY(100, 1),
+        ID_PESSOA  INT NOT NULL,
+        
+        DT_CRIACAO DATETIME NOT NULL DEFAULT GETDATE(),
+
+        CONSTRAINT FkIdPessoaCliente FOREIGN KEY (ID_PESSOA) REFERENCES TBL_PESSOA (ID_PESSOA)
+
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_VENDA
+    GO
+    CREATE TABLE TBL_VENDA (
+        ID_VENDA INT PRIMARY KEY IDENTITY(1,1),
+        DOCUMENTO VARCHAR(15) NOT NULL,
+        
+        ID_CLIENTE INT NOT NULL CHECK(ID_CLIENTE <> ''),
+        MATRICULA INT NOT NULL,
+        
+        DT_VENDA DATETIME DEFAULT GETDATE(),
+        TOTAL FLOAT,
+        
+        CONSTRAINT FkIdCliente FOREIGN KEY (ID_CLIENTE) REFERENCES TBL_CLIENTE (ID_CLIENTE),
+        CONSTRAINT FkIdFuncionario FOREIGN KEY (MATRICULA) REFERENCES TBL_FUNCIONARIO (MATRICULA),
+
+        CONSTRAINT UqDocumento UNIQUE (DOCUMENTO),
+        CONSTRAINT ChChecaDocumento CHECK(DOCUMENTO <> '')
+    )
+    GO
+
+    DROP TABLE IF EXISTS TBL_PRODUTO_VENDA
+    GO
+    CREATE TABLE TBL_PRODUTO_VENDA (
+        ID_PRODUTO_VENDA INT PRIMARY KEY IDENTITY(1,1),
+
+        ID_VENDA INT NOT NULL,
+        ID_PRODUTO INT NOT NULL,
+
+        PRECO_UNITARIO FLOAT NOT NULL,
+        QUANTIDADE INT NOT NULL CHECK (QUANTIDADE >= 1),
+
+        CONSTRAINT FkIdVenda FOREIGN KEY (ID_VENDA) REFERENCES TBL_VENDA (ID_VENDA),
+        CONSTRAINT FkIdProduto FOREIGN KEY (ID_PRODUTO) REFERENCES TBL_PRODUTO (ID_PRODUTO)
+
+    )
+    GO
+
+    INSERT INTO TBL_PESSOA (NOME, CPF, DT_NASCIMENTO, SEXO, EMAIL)
+    VALUES ('William Suane', '12345678910', '2000-01-01', 'M', 'william.suane@gmail.com'),
+           ('Wildnei Suane', '12345678911', '2001-01-01', 'M', 'wildnei.suane@gmail.com'),
+           ('Fabricio Chousa', '12345678912', '1991-04-12', 'M', 'fabricio.chousa@gmail.com'),
+           ('Giselle Almeida', '12345678913', '1982-04-22', 'f', 'giselle.almeida@gmail.com'),
+           ('Tony Stark', '12345678914', '1960-10-12', 'M', 'tony.stark@gmail.com'),
+           ('Steve Rogers', '12345678915', '1920-01-25', 'M', 'steve.rogers@gmail.com'),
+           ('Bruce Banner', '12345678916', '1970-11-18', 'M', 'bruce.banner@gmail.com'),
+           ('Thor Oddinson', '12345678917', '1900-02-14', 'M', 'thor.oddinson@gmail.com'),
+           ('Natasha Romanoff', '12345678918', '1980-07-05', 'F', 'natasha.romanoff@gmail.com'),
+           ('Ant Man', '12345678919', '1975-06-30', 'M', 'ant.man@gmail.com'),
+           ('Capitã Marvel', '12345678920', '1990-08-08', 'F', 'capita.marvel@gmail.com')
+    GO
+    --SELECT * FROM TBL_PESSOA
+
+    INSERT INTO TBL_TIPO_LOGRADOURO (DESC_LOGRADOURO)
+    VALUES ('Rua'),
+           ('Avenida'),
+           ('Estrada'),
+           ('Quadra')
+    GO
+
+    INSERT INTO TBL_ENDERECO (ID_PESSOA, ID_TP_LOGRADOURO, ENDERECO, NUMERO, COMPLEMENTO, CEP)
+    VALUES (8, 4, 'Asgard', 7000, NULL, '2279999'),
+           (5, 1, 'New York', 10000, NULL, '13584961') 
+           --(3, 3, 'Rio Grande', 1462, NULL, '22720011'),
+           --(1, 2, 'Holanda', 580, NULL, '22720012') 
+    go
+    --select * from TBL_ENDERECO
+
+    INSERT INTO TBL_TIPO_TELEFONE (TIPO_TELEFONE)
+    VALUES ('Celular'),
+           ('Residencial') ,
+           ('Trabalho')
+    GO
+
+    INSERT INTO TBL_TELEFONE (ID_PESSOA, ID_TP_TELEFONE, DDD, NUMERO)
+    VALUES (9, 1, '21', '99998888'),
+           (7, 2, '22', '99998877'),
+           (5, 1, '23', '99998866'),
+           (3, 2, '51', '99998855'),
+           (1, 1, '11', '99998844'),
+           (11, 2, '47', '99998833')
+    GO
+    
+    --SELECT * FROM TBL_TELEFONE
+    
+    INSERT INTO TBL_DIRETORIA (COD_DIR, DIRETORIA)
+    VALUES ('CDZ', 'Cavaleiros do Zodíaco'),
+           ('DBZ', 'Dragonball Z'),
+           ('YuYu', 'Yu-Yu-Hakusho'),
+           ('Shur', 'Shurato'),
+           ('Yu-gi', 'Yu-Gi-Oh')
+    GO
+    --select * from TBL_DIRETORIA
+
+    --SELECT * FROM TBL_DEPARTAMENTO
+    INSERT INTO TBL_DEPARTAMENTO (COD_DEPARTAMENTO, DEPARTAMENTO, COD_DIR)
+    VALUES ('COM', 'COMPRAS', 'YuYu'),
+           ('MKT', 'Marketing', 'DBZ') ,
+           ('LOG', 'Logística', 'CDZ'),
+           ('VEN', 'Vendas', 'DBZ'),
+           ('FIN', 'Financeiro', 'Shur'),
+           ('ENG', 'Engenharia', 'CDZ'),
+           ('TI', 'Tecnologia da Informação', 'DBZ')
+    GO
+
+    --SELECT * FROM TBL_CARGO
+    INSERT INTO TBL_CARGO (CARGO)
+    VALUES ('Estagiário'),
+           ('Assistente'),
+           ('Técnico'),
+           ('Trainee'),
+           ('Analista Jr'),
+           ('Analista Pl'),
+           ('Analista Sr'),
+           ('Arquiteto'),
+           ('Engenheiro'),
+           ('Vendedor'),
+           ('Estoquista'),
+           ('Entregador'),
+           ('Gerente Logistica'),
+           ('Diretor TI')
+    GO
+
+    --INSERT INTO TBL_CARGO (CARGO) VALUES ('Diretor TI')
+
+    --SELECT * FROM TBL_TP_FUNCIONARIO
+    INSERT INTO TBL_TP_FUNCIONARIO (TP_FUNCIONARIO)
+    VALUES ('Colaborador'),
+           ('Gerente'),
+           ('Diretor') 
+    GO
+
+    --SELECT * FROM TBL_FUNCIONARIO
+    INSERT INTO TBL_FUNCIONARIO (ID_PESSOA, DT_ADMISSAO, DT_DEMISSAO, SALARIO, ID_CARGO, ID_DEPARTAMENTO, ID_NIVEL_FUNCIONARIO)
+    VALUES (8, '2019-01-06', NULL, 2700.85, 9, 3, 1),
+           (7, '2018-10-10', NULL, 20000.0, 13, 6, 2),
+           (6, '2017-07-30', NULL, 25000.0, 13, 7, 3)
+    GO
+
+    --SELECT * FROM TBL_PRODUTO
+    INSERT INTO TBL_PRODUTO (NOME_PROD, PRECO)
+    VALUES ('Pasta de Amendoim', 89.7),
+           ('Whey Protein 1kg Chocolate', 129),
+           ('Creatina 600g', 99),
+           ('Glutamina 1kg', 149),
+           ('Termogenico', 70)
+    GO
+
+    --SELECT * FROM TBL_FUNCIONARIO
+    INSERT INTO TBL_CLIENTE (ID_PESSOA)
+    VALUES (1),
+           (2), 
+           (3),
+           (10), 
+           (11)
+    go
+
+    --SELECT * FROM TBL_CLIENTE
+    --SELECT * FROM TBL_VENDA
+    INSERT INTO TBL_VENDA (DOCUMENTO, ID_CLIENTE, MATRICULA, TOTAL)
+    VALUES ('CS-0001', 100,  1000, 9876),
+           ('CS-0011', 100,  1000, 106),
+           ('CS-0367', 102,  1000, 1064),
+           ('CS-13670', 102, 1001, 56416),
+           ('CS-05674', 102, 1001, 73168),
+           ('CS-06883', 102, 1002, 3168),
+           ('CS-07654', 102, 1002, 96184),
+           ('CS-03670', 102, 1000, 646168475),
+           ('CS-03677', 102, 1001, 72461)
+    GO
+
+    --SELECT * FROM TBL_PRODUTO_VENDA
+    INSERT INTO TBL_PRODUTO_VENDA (ID_VENDA, ID_PRODUTO, PRECO_UNITARIO, QUANTIDADE)
+    VALUES --(10, 10000, 89.70, 9),
+           (13, 10003, 850, 4),
+           (12, 10002, 102, 4) 
+    GO
+
+
+    SELECT MATRICULA,
+           NOME, 
+           DT_ADMISSAO ,
+           F.ID_DEPARTAMENTO,
+           D.COD_DEPARTAMENTO,
+           D.DEPARTAMENTO,
+           DIR.COD_DIR,
+           DIRETORIA
+      FROM TBL_FUNCIONARIO AS F
+      LEFT JOIN TBL_PESSOA AS P
+        ON F.ID_PESSOA = P.ID_PESSOA
+      LEFT JOIN TBL_DEPARTAMENTO AS D
+        ON D.ID_DEPARTAMENTO = F.ID_DEPARTAMENTO
+      LEFT JOIN TBL_DIRETORIA AS DIR
+        ON DIR.COD_DIR = D.COD_DIR
+    GO
+
+    SELECT * FROM TBL_DEPARTAMENTO
+
+    UPDATE TBL_DEPARTAMENTO
+       SET COD_DIR = 'DBZS'
+     WHERE COD_DIR = 'DBZ'
+
+    SELECT * FROM TBL_DIRETORIA
+
+    UPDATE TBL_DIRETORIA
+       SET COD_DIR = 'DBZS',
+           DIRETORIA = 'Dragonball Z Super'
+     WHERE COD_DIR = 'DBZ'
+    GO
+
+    DELETE TBL_DIRETORIA
+     WHERE COD_DIR = 'DBZ'
+       
+     

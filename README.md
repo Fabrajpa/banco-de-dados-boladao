@@ -73,7 +73,7 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     46 - Criando um database - CREATE (ALTER) DATABASE (Collation)<br>
     47 - Criando uma tabela (CREATE TABLE, DROP IF EXISTS )<br>
     48 - Inserindo dados, atualizando dados (INSERT INTO, UPDATE WHERE<br>
-    49 - Aula 049 - Alterando uma tabela(ALTER TABLE, ADD COLUMN, ALTER COLUMN, DELETE, DROP, TRUNCATE)
+    49 - Aula 049 - Alterando uma tabela(ALTER TABLE, ADD COLUMN, ALTER COLUMN, DELETE, DROP, TRUNCATE)<br>
     50 - Criando uma tabela a partir de outra, usando outra database (SELECT INTO)<br>
     51 - Falando um pouco de Modelagem de Dados<br>
     52 - Criando uma Entidade e atributos - parte 1<br>

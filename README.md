@@ -116,9 +116,9 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     89 - Correção Atividade - parte 2<br>
     90 - Correção Atividade - parte 3<br>
     91 - Correção Atividade - parte 4<br>
-    92 - Funções Lógicas - IIF e CHOOSE
+    92 - Funções Lógicas - IIF e CHOOSE<br>
     
-    <br>
+    
 
 
     Vamos colocar muito mais :D

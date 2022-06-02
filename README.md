@@ -111,6 +111,12 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     84 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 1<br>
     85 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 2<br>
     86 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 3<br>
+    87 - Apresentação Atividae 1<br>
+    88 - Correção Atividade - parte 1<br>
+    89 - Correção Atividade - parte 2<br>
+    90 - Correção Atividade - parte 3<br>
+    91 - Correção Atividade - parte 4<br>
+    92 - Funções Lógicas - IIF e CHOOSE
     
     <br>
 

@@ -111,8 +111,18 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     84 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 1<br>
     85 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 2<br>
     86 - Tabelas Virtuais e Recursividade (CTE Common Table Expression) - parte 3<br>
+    87 - Apresentação da Atividade 1<br>
+    88 - Correção Atividade 1 - parte 1<br>
+    89 - Correção Atividade 1 - parte 2<br>
+    90 - Correção Atividade 1 - parte 3<br>
+    91 - Correção Atividade 1 - parte 4<br>
+    92 - Funções Lógicas - IIF e CHOOSE<br>
+    93 - Funções Matemáticas (ABS, CEILING, EXP, FLOOR, LOG, LOG10, PI, POWER, RAND, ROUND, SIGN, SQRT, SQUARE)<br>
+    94 - Window Function - Funções de classificação (ROW_NUMBER) - parte 1<br>
+    95 - Window Function - Funções de classificação (RANK, DENSE_RANK) - parte 2<br>
+    96 - Window Function - Funções de classificação (NTILE) - parte 3 e Deletando duplicados<br>
     
-    <br>
+    
 
 
     Vamos colocar muito mais :D

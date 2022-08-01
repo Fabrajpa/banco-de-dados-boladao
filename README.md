@@ -121,6 +121,7 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     94 - Window Function - Funções de classificação (ROW_NUMBER) - parte 1<br>
     95 - Window Function - Funções de classificação (RANK, DENSE_RANK) - parte 2<br>
     96 - Window Function - Funções de classificação (NTILE) - parte 3 e Deletando duplicados<br>
+    97 - Window Function - Funções de agregação OVER() e Trazendo o acumulado<br>
     
     
 

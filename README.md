@@ -1,5 +1,5 @@
 # Curso Banco de Dados Boladão - DevDojo Academy
-Pra galera que curte o SQL Server e quer fazer uns scripts bolados, esse curto é pra você!
+Pra galera que curte o SQL Server e quer fazer uns scripts bolados, esse curso é pra você!
 
 FAQ <br>
 Q. Quem criou?<br>

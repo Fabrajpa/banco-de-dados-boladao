@@ -122,8 +122,11 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     95 - Window Function - Funções de classificação (RANK, DENSE_RANK) - parte 2<br>
     96 - Window Function - Funções de classificação (NTILE) - parte 3 e Deletando duplicados<br>
     97 - Window Function - Funções de agregação OVER() e Trazendo o acumulado<br>
-    
-    
+    98 - Window Function - Funções analíticas (LAG, LEAD) - parte 1<br>
+    99 - Window Function - Funções analíticas (FIRST_VALUE, LAST_VALUE) - parte 2<br>
+    100 - Média, Mediana e Moda - SQL Server<br>
+    101 - Subtotal e Total no SQL Server (ROLLUP, CUBE e GROUPING SETS) - parte 1<br>
+    102 - Subtotal e Total no SQL Server (ROLLUP, CUBE e GROUPING SETS) - parte 2<br>
 
 
     Vamos colocar muito mais :D

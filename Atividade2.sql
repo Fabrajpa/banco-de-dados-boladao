@@ -2,6 +2,9 @@
     USE DEVDOJO;
     
     --CREATE SCHEMA Ativ2;
+    
+    DROP TABLE IF EXISTS Ativ2.TblFeriadoNacional
+    GO
 
     CREATE TABLE Ativ2.TblFeriadoNacional (
         Data DATE PRIMARY KEY,

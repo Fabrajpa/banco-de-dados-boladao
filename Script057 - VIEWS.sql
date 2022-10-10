@@ -1,13 +1,13 @@
 
-	/*
-		https://learn.microsoft.com/pt-br/sql/relational-databases/views/views?view=sql-server-ver16
+    /*
 
-		https://learn.microsoft.com/pt-br/sql/t-sql/statements/create-view-transact-sql?view=sql-server-ver16
+	https://learn.microsoft.com/pt-br/sql/relational-databases/views/views?view=sql-server-ver16
+	https://learn.microsoft.com/pt-br/sql/t-sql/statements/create-view-transact-sql?view=sql-server-ver16
 		
-	*/
+    */
     
-	--PARTE 1
-	USE AdventureWorks2019
+    --PARTE 1
+    USE AdventureWorks2019
     GO
 
     CREATE OR ALTER VIEW dbo.VW_TESTE
@@ -72,7 +72,7 @@
     VALUES (1, 'Whey Prothein', 110.00),
            (2, 'Creatina', 120.00),
            (3, 'Term', 60.00),
-           (4, 'Multivitamínico', 45.00)
+           (4, 'MultivitamÃ­nico', 45.00)
     GO
 
     --ERRO AO DELETAR A COLUNA (SCHEMABINDING)
@@ -94,7 +94,7 @@
 
     INSERT INTO Produto2
     VALUES (5, 'Albumina', 80.00),
-           (6, 'Proteína da Soja', 75.00),
+           (6, 'ProteÃ­na da Soja', 75.00),
            (7, 'Pasta de amendoim', 38.80)
     GO
 

@@ -17,6 +17,7 @@ docker ps -a
 docker images
 
 
+--executando um container
 docker start 1c08a7a0d0e4
 
 

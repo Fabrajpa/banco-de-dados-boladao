@@ -127,6 +127,50 @@ A. Estamos publicando aos poucos, até agora tá assim:<br>
     100 - Média, Mediana e Moda - SQL Server<br>
     101 - Subtotal e Total no SQL Server (ROLLUP, CUBE e GROUPING SETS) - parte 1<br>
     102 - Subtotal e Total no SQL Server (ROLLUP, CUBE e GROUPING SETS) - parte 2<br>
+    103 - Tabela Temporária (local e global)<br>
+    104 - Tabelas Temporárias x Tabelas Virtuais (local e global)<br>
+    105 - Merge<br>
+    106 - Cláusula OUTPUT (inserted e deleted)<br>
+    107 - VIEW - parte 1<br>
+    108 - VIEW - parte 2<br>
+    109 - VIEW - parte 3<br>
+    110 - Atividade 2 - parte 1<br>
+    111 - Atividade 2 - parte 2<br>
+    112 - Variáveis - parte 1<br>
+    113 - Variáveis - parte 2<br>
+    114 - Variáveis - parte 3<br>
+    115 - Variáveis - parte 4<br>
+    116 - Operadores Compostos (Opcional)<br>
+    117 - Controle de Fluxo - BEGIN END <br>
+    118 - Controle de Fluxo - Laço de Repetição WHILE - parte 1<br>
+    119 - Controle de Fluxo - Laço de Repetição WHILE - parte 2<br>
+    120 - Controle de Fluxo - Laço de Repetição WHILE - parte 3<br>
+    121 - Controle de Fluxo - Tomada de decisão IF ELSE - parte 1<br>
+    122 - Controle de Fluxo - Tomada de decisão IF ELSE - parte 2<br>
+    123 - Controle de Fluxo - Tomada de decisão IF ELSE - parte 3<br>
+    124 - Controle de Fluxo - CONTINUE, BREAK (WHILE, IF)<br>
+    125 - Controle de Fluxo - GOTO e WAITFOR<br>
+    126 - Controle de Fluxo - TRY CATCH (Tratamento de erro)<br>
+    127 - FUNCTION - parte 1<br>
+    128 - FUNCTION - parte 2<br>
+    129 - FUNCTION - parte 3<br>
+    130 - FUNCTION - parte 4<br>
+    131 - FUNCTION - parte 5<br>
+    132 - Apresentação Atividade<br>
+    133 - Ativdade - Converter segundos em Horas - parte 1<br>
+    134 - Ativdade - Converter segundos em Horas - parte 2<br>
+    135 - Ativdade - Converter segundos em Horas - parte 3<br>
+    136 - Ativdade - Converter segundos em Horas - parte 4<br>
+    137 - PIVOT Dinâmico - parte 1<br>
+    138 - PIVOT Dinâmico - parte 2<br>
+    139 - Exercício Preenchimento para baixo (Fill Down)<br>
+    140 - Correção Exercício Preenchimento para baixo (Fill Down) - parte 1<br>
+    141 - Correção Exercício Preenchimento para baixo (Fill Down) - parte 2<br>
+    142 - CROSS e OUTER APPLY<br>
+    143 - Exercício CROSS e OUTER APPLY (FUNCTION) - parte 1<br>
+    144 - Exercício CROSS e OUTER APPLY (FUNCTION) - parte 2<br>
+    145 - Stored Procedure - parte 1<br>
+    146 - Stored Procedure - parte 2<br>
 
 
     Vamos colocar muito mais :D
